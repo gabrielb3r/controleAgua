@@ -1,0 +1,29 @@
+syntax = 'proto3';
+
+package tanqueMiddlewarePackage;
+
+// Our Tanque service definition.
+service Tanque {
+    rpc createTanque (TanqueItem) returns (TanqueItem);
+    rpc readTanque (TanqueRequest) returns (TanqueItem);
+    rpc readTanques (Empty) returns (TanquesList);
+}
+
+// Our TanqueItem message definition.
+message TanqueItem {
+    int32 id = 1;
+    string Tanque = 2;
+}
+
+// Our TanqueRequest message definition.
+message TanqueRequest {
+    int32 id = 1;
+}
+
+// Our TanquesList message definition. This will be an array of TanqueItem.
+message TanquesList {
+    repeated TanqueItem Tanques = 1;
+}
+
+// the method `readTanques` does not accept any parameter so we have to specify that it is empty.
+message Empty {}

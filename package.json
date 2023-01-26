@@ -1,0 +1,29 @@
+{
+  "name": "controle_tanque",
+  "version": "1.0.0",
+  "description": "Simulador de controle de vazao",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:monitoramento": "node controle/monitoramento.js",
+    "start:valvula": "node controle/valvula.js",
+    "start:sensor": "node controle/sensor.js",
+    "start": "concurrently npm:start:*"
+  },
+  "keywords": [
+    "mqtt",
+    "javascript"
+  ],
+  "author": "Gabriel Martins",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.7",
+    "@grpc/proto-loader": "^0.7.4",
+    "browserify-fs": "^1.0.0",
+    "concurrently": "^7.6.0",
+    "mosca": "^2.8.3",
+    "mqtt": "^4.3.7",
+    "node-localstorage": "^2.2.1"
+  },
+  "type": "module"
+}
